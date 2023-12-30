@@ -1,0 +1,53 @@
+pipeline {
+		agent {
+				label {
+							label "built-in"
+							customWorkspace "/mnt/projects"
+				
+				}
+		}
+		
+		environment {
+						
+						url = "https://github.com/DevopsvivekS/demo-1-project.git"
+		
+		}
+		
+		stages {
+		
+				stage ("ClONE_PROJECT"){
+								
+							steps {
+										sh "rm -rf *"
+										sh "git clone $url"
+							
+							}
+				
+				}
+				
+				stage ("BUILD_PROJECT") {
+							
+								steps {
+											
+											sh "cd game-of-life && mvn install"
+								
+								}
+				
+				}
+				
+				stage ("COPY") {
+							
+							steps {
+										sh "rm -rf /mnt/wars/*"
+										sh "cp -r demo-1-project/target/demo-1-company-0.0.1-SNAPSHOT.jar /mnt/wars"
+							
+							}
+				
+				
+				}
+		
+		
+		
+		}
+
+}

@@ -1,0 +1,12 @@
+[velocity@ip-10-10-2-115 ~]$ history
+    1  ifconfig
+    2  sudo chmod -R 777 /mnt
+    3  sudo yum install java-1.8.0-openjdk-devel.x86_64 -y
+    4  sudo yum install docker -y
+    5  sudo systemctl start docker
+    6  sudo curl -SL https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+    7  sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+    8  sudo chmod -R 777 /usr/local/bin/docker-compose /usr/bin/docker-compose
+    9  docker-compose -v
+   10  history
+[velocity@ip-10-10-2-115 ~]$
